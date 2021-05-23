@@ -17,7 +17,6 @@
     </div>
     <div class="container my-3">
         <h2>Your Todo</h2>
-            <tbody>
                 {% if allTodo|length==0 %}
                 <div class="alert alert-dark" role="alert">
                     Nothing todo
@@ -34,7 +33,9 @@
         
                         </tr>
                     </thead>
+                    <tbody>
                 {% for todo in allTodo %}
+                
                 <tr>
                     <th scope="row">{{loop.index}}</th>
                     <td>{{todo.title}}</td>
@@ -47,9 +48,10 @@
                                 class="btn btn-outline-dark btn-sm mx-1">Delete</button>
                     </td>
                 </tr>
+
+                {% endfor %}
             </tbody>
         </table>
-                {% endfor %}
                 {% endif %}
 
     </div>
